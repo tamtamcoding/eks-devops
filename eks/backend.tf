@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "ezekiel-terra-state"
+    bucket         = "tamtamcoding-tfstate"
     region         = "us-east-1"
     key            = "eks/terraform.tfstate"
     //dynamodb_table = "MyTable"
