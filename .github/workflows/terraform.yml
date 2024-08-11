@@ -53,7 +53,7 @@ jobs:
     - name: Check if S3 bucket exists and create if not
       id: check_s3_bucket
       run: |
-        if ! aws s3api head-bucket --bucket "tamtamcoding-tfstate" 2>/dev/null; then
+        if ! aws s3api head-bucket --bucket "tamtamcoding-tfstate" --region $AWS_DEFAULT_REGION 2>/dev/null; then
           echo "S3 bucket does not exist. Creating bucket..."
           aws s3api create-bucket --bucket "tamtamcoding-tfstate" --region $AWS_DEFAULT_REGION
           echo "Bucket created. Waiting for 60 seconds to ensure consistency..."
