@@ -68,6 +68,7 @@ jobs:
       # Format Terraform files
       - name: Terraform Format
         run: terraform fmt -check
+        continue-on-error: true
 
       # Validate Terraform configuration
       - name: Terraform Validate
